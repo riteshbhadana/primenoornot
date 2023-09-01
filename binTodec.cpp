@@ -2,16 +2,15 @@
 #include<math.h>
 using namespace std;
 int main (){
-     int n;
-     cin >> n;
-     int ans =0;
-     int i =0;
-     while(n!=0){
-        int bit = n&1;
-        ans = (bit * pow(10,i))+ans;
-        n=n>>1;
-        i++;
-     }
-     cout << " Answer is " << ans<<endl;
-     return 0;
+   int reverse(int x){
+      int ans =0;
+      while(x){
+         int digit =x%10;
+         if((ans > INT_MAXI10)||(ans<INT_MINI10))
+         return 0;
+         ans=ans*10+digit;
+         x/=10;
+      }
+      return ans;
+   }
 }
